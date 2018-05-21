@@ -1,23 +1,31 @@
 package com.example.a16022653.demodatabasecrud;
 
-public class Note {
+import java.io.Serializable;
+
+public class Note implements Serializable {
     private int id;
     private String noteContent;
-    private int stars;
 
-    public Note(int id, String noteContent, int stars) {
+    public Note(int id, String noteContent) {
         this.id = id;
         this.noteContent = noteContent;
-        this.stars = stars;
     }
 
     public int getId() {
         return id;
     }
+
     public String getNoteContent() {
         return noteContent;
     }
-    public int getStars() {
-        return stars;
+
+    public void setNoteContent(String noteContent) {
+        this.noteContent = noteContent;
     }
+
+    @Override
+    public String toString() {
+        return "ID:" + id + ", " + noteContent;
+    }
+
 }
